@@ -1,0 +1,9 @@
+local player = game.Players.LocalPlayer
+
+Input.FocusLost:connect(function()
+	for i,v in pairs(game.Players:GetChildren()) do
+		if (string.sub(string.lower(v.Name),1,string.len(Input.Text))) == string.lower(Input.Text) then
+			Input.Text = v.Name
+		end
+	end
+end)
